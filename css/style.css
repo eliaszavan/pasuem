@@ -1,0 +1,170 @@
+:root {
+    --bg1: #0f172a;
+    --bg2: #071129;
+    --accent1: #7c3aed;
+    --accent2: #06b6d4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Inter, system-ui, sans-serif;
+    background: linear-gradient(180deg, var(--bg1), var(--bg2));
+    color: #eef2ff;
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 72px);
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+p {
+    font-size: 14px;
+}
+
+.title {
+    margin-top: 0.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+/* Tooltip da Literatura */
+.tooltip {
+  position: fixed; 
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,0.9);
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  z-index: 9999;
+  white-space: pre-line; 
+  display: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip.show {
+  display: block;
+  opacity: 1;
+}
+
+.subjects {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+details {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+    overflow: hidden;
+}
+
+details[open] {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+summary {
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    min-width: 40px;
+    text-align: right;
+}
+
+.circular {
+    width: 28px;
+    height: 28px;
+    transform: rotate(-90deg);
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #1e293b;
+    stroke-width: 3.5;
+}
+
+.circle {
+    fill: none;
+    stroke: var(--accent1);
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    transition: stroke-dashoffset 0.6s ease;
+}
+
+/* --- Ajuste para tópicos longos --- */
+.content-list {
+    display: block;
+    overflow: visible;      /* permite conteúdo longo */
+    max-height: none;       /* sem limite de altura */
+    opacity: 1;             /* sempre visível quando detalhes abertos */
+    margin-left: 4px;
+    transition: none;       /* remove transição problemática de altura */
+}
+
+details[open] .content-list {
+    max-height: none;
+    opacity: 1;
+    margin-top: 14px;
+}
+
+label {
+    display: block;               /* cada label em bloco */
+    align-items: flex-start;      /* alinha checkbox ao topo do texto */
+    gap: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    white-space: pre-line;        /* respeita \n */
+    word-wrap: break-word;        /* quebra palavras grandes */
+}
+
+input[type="checkbox"] {
+    accent-color: var(--accent1);
+    width: 18px;
+    height: 18px;
+}
