@@ -123,13 +123,18 @@ const materias = [
   {
     nome: "Matemática",
     topicos: [
-      "Conjuntos numéricos",
-      "Funções - Afim, quadrática, exponencial, logarítmica",
-      "Progressões (PA e PG)",
-      "Matrizes, determinantes e sistemas lineares",
-      "Trigonometria - Razões trigonométricas, Identidades trigonométricas",
-      "Geometria analítica - Ponto, reta, circunferência, Distância entre pontos",
-      "Estatística e probabilidade básica"
+      "Conjuntos numéricos.",
+      "Razão e Proporção.",
+      "Interpretação de Gráficos.",
+      "Notações Científicas.",
+      "Porcentagem.",
+      "Juros.",
+      "Funções - Afim, quadrática, exponencial, logarítmica.",
+      "Progressões (PA e PG).",
+      "Matrizes, determinantes e sistemas lineares.",
+      "Trigonometria - Razões trigonométricas, Identidades trigonométricas.",
+      "Geometria analítica - Ponto, reta, circunferência, Distância entre pontos.",
+      "Estatística e probabilidade básica."
     ]
   },
 {
